@@ -1,0 +1,76 @@
+standard to open 
+
+bash ~/CARLA_PROJECT/CARLA_0.9.15/CarlaUE4.sh -quality-level=Low -prefernvidia
+
+
+
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+
+ros2 launch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch.py \
+objects_definition_file:=$HOME/CARLA_PROJECT/ros2_bridge_ws/src/Self-Driving-Car-CARLA-ROS2/car_definition_file.json
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+ros2 launch carla_waypoint_publisher carla_waypoint_publisher.launch.py
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+ros2 run carla_ad_agent local_planner
+
+
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+
+ros2 run collision_avoidance_system collision_monitor_control
+
+
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+
+ros2 run navigation navigation_hmi  --ros-args -p enable_spd_cmd:=false
+
+
+
+
+source /opt/ros/humble/setup.bash    
+rviz2
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+
+cd ~/CARLA_PROJECT/CARLA_0.9.15/PythonAPI/examples
+python3 manual_control.py --rolename vehicle
+
+
+
+
+

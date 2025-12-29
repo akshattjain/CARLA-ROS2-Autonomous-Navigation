@@ -124,7 +124,7 @@ Also, we can **control the vehicle** with the **API/ROS bridge**.
 4.  Use a **controller** to control the vehicle to follow the route.
 5.  Use **Navigation HMI** to select the destination location on the map.
 
-Please follow procedure mentioned in [PHASE-1_readme.MD](https://github.com/asujaykk/Self-Driving-Car-CARLA-ROS2/blob/main/PHASE-1_readme.MD)
+Please follow procedure mentioned in [PHASE-1_readme.MD](https://github.com/akshattjain/CARLA-ROS2-Autonomous-Navigation/blob/main/PHASE-1_readme.MD)
 
 
 
@@ -140,6 +140,6 @@ Please follow procedure mentioned in [PHASE-1_readme.MD](https://github.com/asuj
 5.  Use **Navigation HMI** to select the destination location on the map.
 6.  use **collision monitor** module to monitor frontal collision and control the vehicle to avoid it.
 
-Please follow procedure mentioned in [PHASE-2_readme.MD](https://github.com/asujaykk/Self-Driving-Car-CARLA-ROS2/blob/main/PHASE-2_readme%20.MD)
+Please follow procedure mentioned in [PHASE-2_readme.MD](https://github.com/akshattjain/CARLA-ROS2-Autonomous-Navigation/blob/main/PHASE-2_readme%20.MD)
 
 

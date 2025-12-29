@@ -1,0 +1,85 @@
+bash $HOME/CARLA_PROJECT/CARLA_0.9.15/CarlaUE4.sh -quality-level=Low -prefernvidia
+
+bash ~/CARLA_PROJECT/CARLA_0.9.15/CarlaUE4.sh -quality-level=Low -prefernvidia
+
+
+
+
+
+
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+
+ros2 launch carla_ros_bridge carla_ros_bridge_with_example_ego_vehicle.launch.py
+
+configured to key b for controlling the vehicle 
+
+
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+ros2 launch carla_waypoint_publisher carla_waypoint_publisher.launch.py
+
+
+
+
+
+
+
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+ros2 run carla_ad_agent local_planner
+
+
+
+
+
+to verify 
+
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+ros2 node list
+
+this should show 
+
+/carla_ros_bridge
+/local_planner
+
+
+
+
+
+conda deactivate
+source /opt/ros/humble/setup.bash
+source ~/CARLA_PROJECT/ros2_bridge_ws/install/setup.bash
+export CARLA_ROOT=$HOME/CARLA_PROJECT/CARLA_0.9.15
+export PYTHONPATH=$PYTHONPATH:$CARLA_ROOT/PythonAPI/carla
+
+ros2 run navigation navigation_hmi
+
+
+
+source /opt/ros/humble/setup.bash    
+rviz2
+
+now do the modifications in rviz
+In rviz global options se select 
+FIXED FRAME IS MAP 
+MARKER ARRAY is /CARLA/ROAD_NETWORK
+MARKER ARRAY is /CARLA/MARKERS
+PATH is CARLA/WAYPOINT/
+IMAGE is CARLA/hero?rgb_view
+point cloud if you want to CARLA/LIDAR/ 
+
+
+
+
